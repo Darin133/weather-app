@@ -43,7 +43,7 @@ button:hover{
   border: 1px solid grey;
   width: 600px;
   padding: 0px 20px;
-  margin: 30px 30px;
+  margin: 30px 30px 10px 30px;
   border-radius: 5px;
   box-shadow: 0 10px 8px -10px rgba(0, 0, 0, 0.3);
 }
@@ -110,4 +110,7 @@ button:hover{
 }
 .daysTemp {
   max-width: 80px;
+}
+.gitHubLink{
+  margin: 0px 0px 0px 150px;
 }
