@@ -102,8 +102,9 @@ button:hover {
 
 .temp {
   font-size: 60px;
+  padding-left: 8px;
 }
-.celsius {
+.unit {
   font-size: 25px;
   position: relative;
   top: -25px;

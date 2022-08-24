@@ -63,3 +63,19 @@ function getCurrentPosition() {
 
 let placeButton = document.querySelector("#place");
 placeButton.addEventListener("click", getCurrentPosition);
+
+function showFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temp");
+  let temperature = temperatureElement.innerHTML;
+  temperature = Number(temperature);
+  temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
+}
+
+let celsiusTemperature = null;
+
+let Fbutton = document.querySelector("#Fahrenheit");
+Fbutton.addEventListener("click", showFahrenheit);
+
+
+
