@@ -34,7 +34,7 @@ button {
   padding: 1px 6px;
 }
 
-button:hover{
+button:hover {
   background: #45a9bb;
   border: 2px solid#45a9bb;
 }
@@ -104,13 +104,13 @@ button:hover{
   font-size: 60px;
 }
 .celsius {
-  font-size: 30px;
+  font-size: 25px;
   position: relative;
-  top: -20px;
+  top: -25px;
 }
 .daysTemp {
   max-width: 80px;
 }
-.gitHubLink{
+.gitHubLink {
   margin: 0px 0px 0px 150px;
 }
