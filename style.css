@@ -112,6 +112,15 @@ button:hover {
 .daysTemp {
   max-width: 80px;
 }
+
+.active{
+  cursor: default;
+  color: black;
+}
+
+.active:hover{
+  color: black;
+}
 .gitHubLink {
   margin: 0px 0px 0px 150px;
 }

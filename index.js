@@ -81,12 +81,16 @@ function showFahrenheit(event) {
   let temperature = celsiusTemperature;
   temperature = Number(temperature);
   temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
+  Cbutton.classList.remove("active");
+  Fbutton.classList.add("active");
 }
 
 function showCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temp");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  Fbutton.classList.remove("active");
+  Cbutton.classList.add("active");
 }
 
 let celsiusTemperature = null;
