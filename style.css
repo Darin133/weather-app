@@ -106,6 +106,9 @@ button:hover {
   position: relative;
   top: -25px;
 }
+#Celsius , #Fahrenheit{
+  text-decoration: none;
+}
 .daysTemp {
   max-width: 80px;
 }

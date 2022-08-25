@@ -45,7 +45,8 @@ function showWeather(response) {
   let city = document.querySelector("h1");
   city.innerHTML = response.data.name;
   let degrees = document.querySelector("#temp");
-  degrees.innerHTML = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+  degrees.innerHTML = Math.round(celsiusTemperature);
   let sky = document.querySelector("h4");
   sky.innerHTML = response.data.weather[0].description;
   let humidityWind = document.querySelector("h6");
@@ -53,7 +54,10 @@ function showWeather(response) {
     response.data.main.humidity
   }% </br> Wind: ${Math.round(response.data.wind.speed)} km/h`;
   let picture = document.querySelector("#icon");
-  picture.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  picture.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function findCurrentPlace(position) {
@@ -74,14 +78,23 @@ placeButton.addEventListener("click", getCurrentPosition);
 function showFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temp");
-  let temperature = temperatureElement.innerHTML;
+  let temperature = celsiusTemperature;
   temperature = Number(temperature);
   temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
+}
+
+function showCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 let celsiusTemperature = null;
 
 let Fbutton = document.querySelector("#Fahrenheit");
 Fbutton.addEventListener("click", showFahrenheit);
+
+let Cbutton = document.querySelector("#Celsius");
+Cbutton.addEventListener("click", showCelsius);
 
 search("New York");
