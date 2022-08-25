@@ -26,8 +26,7 @@ function currentTime() {
 
 currentTime();
 
-
-function search(city){
+function search(city) {
   let apiKey = "8bf13fea7fc7416d4df009d0ae146aff";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
@@ -46,13 +45,15 @@ function showWeather(response) {
   let city = document.querySelector("h1");
   city.innerHTML = response.data.name;
   let degrees = document.querySelector("#temp");
-  degrees.innerHTML = ` ${Math.round(response.data.main.temp)}`;
+  degrees.innerHTML = Math.round(response.data.main.temp);
   let sky = document.querySelector("h4");
   sky.innerHTML = response.data.weather[0].description;
   let humidityWind = document.querySelector("h6");
   humidityWind.innerHTML = `Humidity: ${
     response.data.main.humidity
   }% </br> Wind: ${Math.round(response.data.wind.speed)} km/h`;
+  let picture = document.querySelector("#icon");
+  picture.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
 function findCurrentPlace(position) {
@@ -84,6 +85,3 @@ let Fbutton = document.querySelector("#Fahrenheit");
 Fbutton.addEventListener("click", showFahrenheit);
 
 search("New York");
-
-
-

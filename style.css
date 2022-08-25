@@ -92,12 +92,9 @@ button:hover {
   border: 2px solid #6e5ba8;
 }
 
-.fa-cloud {
+.icon {
   font-size: 70px;
-  margin: 7px 0;
-}
-.fa-solid {
-  color: grey;
+  margin: 0;
 }
 
 .temp {
