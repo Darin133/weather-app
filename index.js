@@ -26,6 +26,7 @@ function currentTime() {
 
 currentTime();
 
+
 function search(city){
   let apiKey = "8bf13fea7fc7416d4df009d0ae146aff";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
