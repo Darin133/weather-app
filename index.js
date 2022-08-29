@@ -101,4 +101,25 @@ Fbutton.addEventListener("click", showFahrenheit);
 let Cbutton = document.querySelector("#Celsius");
 Cbutton.addEventListener("click", showCelsius);
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<ul>`;
+  let days = [
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<li>${day}    <i class="fa-solid fa-sun"></i>       21 &#176C</li>`;
+  });
+  forecastHTML = forecastHTML + `</ul>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+displayForecast();
 search("New York");
