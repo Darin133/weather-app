@@ -17,9 +17,10 @@ ul {
   list-style-type: none;
   padding: 0;
   margin-top: 20px;
+  margin-bottom: 0px;
 }
 li {
-  padding-bottom: 25px;
+  padding-bottom: 15px;
   font-size: 20px;
 }
 button {
@@ -118,6 +119,12 @@ button:hover {
 .active:hover{
   color: black;
 }
+
+.forecastIcon{
+  max-width: 45px;
+  margin: 0 10px;
+}
 .gitHubLink {
   margin: 0px 0px 0px 150px;
 }
+

@@ -109,22 +109,37 @@ Fbutton.addEventListener("click", showFahrenheit);
 let Cbutton = document.querySelector("#Celsius");
 Cbutton.addEventListener("click", showCelsius);
 
-function displayForecast(response) {
-  console.log(response.data.daily);
-  let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = `<ul>`;
+function formatDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
   let days = [
+    "Sunday",
+    "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
     "Saturday",
-    "Sunday",
   ];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<li>${day}    <i class="fa-solid fa-sun"></i>       21 &#176C</li>`;
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<ul>`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 7 && index > 0) {
+      forecastHTML =
+        forecastHTML +
+        `<li>${formatDate(
+          forecastDay.dt
+        )}  <img src="http://openweathermap.org/img/wn/${
+          forecastDay.weather[0].icon
+        }@2x.png" class="forecastIcon">   ${Math.round(
+          forecastDay.temp.max
+        )} &#176C</li>`;
+    }
   });
   forecastHTML = forecastHTML + `</ul>`;
   forecastElement.innerHTML = forecastHTML;
